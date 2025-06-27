@@ -7,6 +7,7 @@ They are called static because the size of the array cannot change once declared
 Let's cover the key operations of an array, and the time complexity associated with each.
 
 **Reading from an array**
+
 To read an individual element from an array we can choose the position we want to access via an index. Below we have initialized an array of size 3 called myArray. We also attempt to access an arbitrary element using the index i.
 
 ``` java
@@ -24,6 +25,7 @@ Accessing a single element in an array is always instant because each index of m
 > Note: There is a common confusion that O(1) is always fast. This is not the case. There could be 1000 operations and the time complexity could still be O(1). If the number of operations does not grow as the size of the data or input grows then it is O(1).
 
 **Traversing through an array**
+
 We can also read all values within an array by traversing through it. Below are examples of how we could traverse myArray from the start to the end using loops.
 
 ``` java
