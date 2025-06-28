@@ -99,3 +99,24 @@ public void removeMiddle(int[] arr, int i, int length) {
 ```
 
 <img width="1085" alt="Screenshot 2025-06-27 at 8 36 46 AM" src="https://github.com/user-attachments/assets/5b3da53d-0310-4e82-9ae1-881d299a12fe" />
+
+26. Remove Duplicates From Sorted Array - Explanation
+    Input: nums = [0,0,1,1,1,2,2,3,3,4]
+    Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+    - Take two pointers , left and right, start at second element
+    - Move the right pointer and check if r != r-1, not equal means we are at a point where both the element is not unique
+    - If yes, take the element from r and update it to element at l and increase l by 1.
+   
+``` java
+    public int removeDuplicates(int[] nums) {
+        int l = 1;
+        for(int r = 1; r < nums.length; r++ ){
+            if(nums[r]!=nums[r-1]){
+                nums[l++]=nums[r];
+            }
+        }
+        return l;
+    }
+```
+
+
