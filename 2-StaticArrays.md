@@ -119,4 +119,58 @@ public void removeMiddle(int[] arr, int i, int length) {
     }
 ```
 
+**1.4 - Insertion**
 
+1.4.1 - Inserting at the end
+
+If we want to insert an element at the end of the array, we can simply insert it at the next open position which will be at index length where length is the number of elements in the array.
+```java
+// Insert n into arr at the next open position.
+// Length is the number of 'real' values in arr, and capacity
+// is the size (aka memory allocated for the fixed size array).
+public void insertEnd(int[] arr, int n, int length, int capacity) {
+    if (length < capacity) {
+        arr[length] = n;
+    }
+}
+```
+> Since we are writing a single value to the array, the time complexity is 
+> Note: length is the number of elements inside the array whereas capacity refers to the maximum number of elements the array can hold.
+
+1.4.2 - Inserting at the ith index
+
+Inserting at an arbitrary index i is more involved since we may insert in the middle of the array.
+
+Consider the array [4, 5, 6]. If we need to insert at index i = 1, or i = 0, we cannot overwrite the original value because we would lose it. Instead, we will need to shift all values, starting at index i, one position to the right. Below is the code and visual demonstrating this.
+
+```java
+// Insert n into index i after shifting elements to the right.
+// Assuming i is a valid index and arr is not full.
+public void insertMiddle(int[] arr, int i, int n, int length) {
+    // Shift starting from the end to i.
+    for (int index = length - 1; index > i - 1; index--) {
+        arr[index + 1] = arr[index];
+    }
+    // Insert at i
+    arr[i] = n;
+}
+```
+The below image visualizes the insertion of 8 at index 1 in the array [4, 5, 6]. Since we don't have enough space to keep the last element 6, it is lost.
+
+<img width="1083" alt="Screenshot 2025-06-28 at 10 45 18 AM" src="https://github.com/user-attachments/assets/9db8f892-1feb-4461-ba10-ade34ec4073c" />
+
+> The visual above demonstrates that shifting occurs prior to insertion to ensure values are not overwritten.
+
+
+**Time Complexity**
+
+Operation	Big-O Time	Notes
+Reading	    O(1)	
+Insertion	O(n)*	    If inserting at the end of the array, O(1)
+Deletion    O(n)*	    If deleting at the end of the array, O(1)
+
+**Closing Notes**
+
+The operations we discussed above are absolutely critical for solving a lot of interview problems. In fact, the key to solving many problems is being able to implement the insert middle and delete middle operations efficiently.
+
+There are some suggested problems listed above. If you are a beginner you may find them challenging. That's completely okay, your goal should be to understand the concepts and the operations we discussed above. The solution code and video explanation are provided for each problem.
