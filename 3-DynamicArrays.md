@@ -1,4 +1,4 @@
-#3 - Dynamic Arrays
+# 3 - Dynamic Arrays
 
 Dynamic Arrays are a much more common alternative to static arrays. They are useful because they can grow as elements are added. In JavaScript and Python, these are the default arrays.
 
