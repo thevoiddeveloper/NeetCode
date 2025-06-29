@@ -177,7 +177,25 @@ There are some suggested problems listed above. If you are a beginner you may fi
 
 
 27. Remove Element - Explanation
-    - 
+    - Take two pointers k and i
+    - Start k to point elements from 0
+    - Traverse in for loop from 0 to len-1
+    - If you visit any element which is not equal to the value provide,
+      Update the element at let pointer K to that element and increase the left pointer by 1
+    - Return K 
+```java
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int k=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!= val){
+                nums[k++]=nums[i];
+            }
+        }
+        return k;
+    }
+}
+```
 
 
 **ALL CODE**
