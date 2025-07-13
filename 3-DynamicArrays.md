@@ -75,7 +75,20 @@ Inserting or removing from the middle of a dynamic array would be similar to a s
 ## Time Complexity
 <img width="1100" height="196" alt="Screenshot 2025-07-13 at 2 05 49 PM" src="https://github.com/user-attachments/assets/57be831f-9908-4b25-b1f6-0f91ab33d418" />
 
+**1929. Concatenation of Array**
+- Create a reult array of twice the size
+- Run a loop from 0 to original size
+- make ith element and i+nth element of result array equal to ith element in original array
 
-
-
-
+```java
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int[] ans = new int[2*nums.length];
+        int n = nums.length;
+        for(int i=0;i<nums.length;i++){
+            ans[i]=ans[i+n]=nums[i];
+        }
+        return ans;
+    }
+}
+```
