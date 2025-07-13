@@ -23,7 +23,5 @@ public void pushback(int n) {
 }
 ```
 
-<img width="1900" height="629" alt="Screenshot 2025-07-13 at 1 42 49 PM" src="https://github.com/user-attachments/assets/ed112c5e-43bd-426a-b0ec-0f25204b70f0" />
-
 
 
