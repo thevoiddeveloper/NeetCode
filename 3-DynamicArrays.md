@@ -69,5 +69,13 @@ Since inserting n elements into a dynamic array is O(n), the amortized time comp
 >With time complexity analysis, we typically drop constant terms and coefficients.
 
 
+Other Operations
+Inserting or removing from the middle of a dynamic array would be similar to a static array. We would have to shift elements to the right or left to make space for the new element or to fill the gap left by the removed element. This would run in O(n) time.
+
+##Time Complexity
+<img width="1100" height="196" alt="Screenshot 2025-07-13 at 2 05 49 PM" src="https://github.com/user-attachments/assets/57be831f-9908-4b25-b1f6-0f91ab33d418" />
+
+
+
 
 
