@@ -196,6 +196,8 @@ class Solution {
     }
 }
 ```
+## Time Complexity
+<img width="1098" height="196" alt="Screenshot 2025-07-13 at 2 07 28 PM" src="https://github.com/user-attachments/assets/f0f92ea3-c17c-4635-aeac-c2693179362b" />
 
 
 **ALL CODE**
