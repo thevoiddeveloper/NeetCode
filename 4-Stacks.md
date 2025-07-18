@@ -46,6 +46,34 @@ public int peek() {
 }
 ```
 
+Implement Stack from Array List
+```java
+import java.util.ArrayList;
+
+// Implementing a stack is trivial using a dynamic array
+// (which we implemented earlier).
+public class Stack {
+
+    ArrayList<Integer> stack = new ArrayList<Integer>();
+
+    public Stack() {   
+    }
+
+    public void push(int n) {
+        stack.add(n);
+    }
+
+    public int pop() {
+        return stack.remove(stack.size() - 1);
+    }
+
+    public int size() {
+        return stack.size();
+    }
+}
+```
+
+
 **4.4 Time Complexity**
 <img width="1096" height="191" alt="Screenshot 2025-07-18 at 8 16 43 PM" src="https://github.com/user-attachments/assets/2e07bc07-b0e0-424c-beed-8721694b2ce7" />
 
