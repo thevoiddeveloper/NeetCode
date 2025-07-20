@@ -130,3 +130,38 @@ Updated linked list after deletion of ListNode2. Notice that now ListNode1’s n
 
 <img width="1100" height="244" alt="Screenshot 2025-07-20 at 7 31 35 PM" src="https://github.com/user-attachments/assets/4d6e2231-406f-41a8-aaf9-1cf05a80b2a9" />
 
+**206. Reverse Linked List**
+- Basicly we need to make Head as tail and tail as Head with reversing the pointing direction from front to back
+- Start with two pointers Current pointing to head and previous pointing to null.
+- Loop through the list till we reach current != null
+- First, Take a temp var and store the current.next
+- Second, currrent.next will point to previous
+- Third, Move previous to current and current to the temp variable
+- Return head as previous at the end
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode current = head;
+        ListNode previous = null;
+        while(current!=null){
+            ListNode next = current.next;
+            current.next=previous;
+            previous=current;
+            current=next;
+        }
+        return previous;
+    }
+}
+```
+
