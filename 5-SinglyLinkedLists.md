@@ -49,3 +49,58 @@ ListNode3.next = null;
 
 <img width="1087" height="147" alt="Screenshot 2025-07-20 at 7 16 53 PM" src="https://github.com/user-attachments/assets/f86bb9cf-a70d-4a1d-b72e-ae911902fce9" />
 
+**5.2 Traversal**
+
+To traverse a linked list from beginning to end, we can just make use of a simple while loop.
+
+```java
+ListNode cur = ListNode1;
+while (cur != null) {
+    cur = cur.next;
+}
+```
+
+  1. We start the traversal at the head of the list, which is ListNode1.
+  2. We assign it to a variable cur, denoting the current node we are at.
+  3. We execute the while loop until we reach the end of the list which is null.
+  4. In each iteration, we update cur to be the next node in the list by setting cur = cur.next.
+  5. The traversal runs in O(n) time where n is the number of nodes in the linked list.
+
+<img width="1078" height="876" alt="Screenshot 2025-07-20 at 7 23 11 PM" src="https://github.com/user-attachments/assets/bcac7ec7-8f0c-4a61-a1f1-b2c94536e658" />
+
+**5.3 Circular Linked List**
+
+An interesting scenario presents itself if ListNode3’s next pointer is set to ListNode1 instead of null. This results in a circular linked list.
+
+Attempting to iterate through a circular linked list would result in an infinite loop. We would never reach the end of the linked list.
+
+<img width="1081" height="187" alt="Screenshot 2025-07-20 at 7 24 23 PM" src="https://github.com/user-attachments/assets/047ef31f-dbd9-48d6-80c2-f6972a6022be" />
+
+**5.4 Operations of a Singly Linked List**
+
+Linked Lists have a head, and a tail pointer. The head pointer points to the very first node in the linked list, ListNode1, and the tail pointer points to the very last node — ListNode3. If there is only one node in the Linked List, the head and the tail point to the same node.
+
+5.4.1 Appending
+
+An advantage that Linked Lists have over arrays is that inserting a new element can be performed in O(1) time, even if we insert in the middle.
+
+We do not have to shift any elements since there is no requirement for the elements to be stored contiguously in memory.
+
+>This assumes we already have a reference to the node at the desired position we want to insert. If we have to traverse the list to arrive at the insertion point, the operation would take O(n) time.
+
+If we wanted to append a ListNode4 to the end of the list, we would be appending to the tail. Once ListNode4 is appended, we update our tail pointer to be at ListNode4. This operation would be done in O(1) time since it is only one operation. The steps would look like the following, with code.
+
+<img width="1085" height="311" alt="Screenshot 2025-07-20 at 7 26 53 PM" src="https://github.com/user-attachments/assets/13830ce3-3b46-498f-9a33-a8645b8b1f9b" />
+
+```java
+tail.next = ListNode4;
+```
+
+<img width="1079" height="244" alt="Screenshot 2025-07-20 at 7 27 34 PM" src="https://github.com/user-attachments/assets/50b6aa7d-6011-430a-b301-477e187fafb5" />
+
+```java
+tail = ListNode4;
+```
+
+<img width="1082" height="217" alt="Screenshot 2025-07-20 at 7 28 09 PM" src="https://github.com/user-attachments/assets/cb65514f-70f7-4654-9e1a-8e53d79fa72e" />
+
