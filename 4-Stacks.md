@@ -109,3 +109,45 @@ public boolean isValid(String s) {
     }
 ```
 
+**55. Min Stack**
+- Create a Stack and a MinStack
+- When we are pushing an element to Stack, check is that element is less tahn the top element in MinStack, Push if yes.
+- When we are poping an element from Stack, check if that was the element on top of MinStack, Pop from Min Stack too.
+- Top will be just a Peek of Stack
+- MinElement will be just a Peek of MinStack
+
+```java
+class MinStack {
+    private Stack<Integer> stack;
+    private Stack<Integer> minStack;
+
+
+    public MinStack() {
+        stack = new Stack<>();
+        minStack = new Stack<>();
+    }
+    
+    public void push(int val) {
+        stack.push(val);
+        if(minStack.isEmpty() || val <= minStack.peek()){
+            minStack.push(val);
+        }
+    }
+    
+    public void pop() {
+        if(stack.isEmpty()) return;
+        int top = stack.pop();
+        if(top == minStack.peek()){
+            minStack.pop();
+        }
+    }
+    
+    public int top() {
+        return stack.peek();
+    }
+    
+    public int getMin() {
+        return minStack.peek();
+    }
+}
+```
