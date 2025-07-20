@@ -77,3 +77,35 @@ public class Stack {
 **4.4 Time Complexity**
 <img width="1096" height="191" alt="Screenshot 2025-07-18 at 8 16 43 PM" src="https://github.com/user-attachments/assets/2e07bc07-b0e0-424c-beed-8721694b2ce7" />
 
+**20. Valid Parentheses**
+- For this scenario use a stack
+- Push the elements to the stack when you encounter (,{,[ open brackets
+- Create a Hash Map which contains ),},] close brackets as key and (,{,[ open brackets as value
+- Now, when you encounter a ),},] close brackets check if the top element in Stack is a (,{,[ open brackets, return if no
+- If yes, POP out the top element.
+- Continue till you reach the end of string.
+- Return isEmpty value
+
+```java
+public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        Map<Character,Character> closeToOpen = new HashMap<>();
+        closeToOpen.put(')','(');
+        closeToOpen.put('}','{');
+        closeToOpen.put(']','[');
+
+        for(char c:s.toCharArray()){
+            if(closeToOpen.containsKey(c)){
+                if(!stack.isEmpty() && stack.peek()==closeToOpen.get(c)){
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
+```
+
