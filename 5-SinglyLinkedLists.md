@@ -123,6 +123,7 @@ Updated linked list after deletion of ListNode2. Notice that now ListNode1’s n
 
 <img width="1078" height="282" alt="Screenshot 2025-07-20 at 7 31 21 PM" src="https://github.com/user-attachments/assets/a47b5287-f608-4d89-84a5-6e56109166d1" />
 
+
 >It can be assumed that the memory occupied by ListNode2 will be cleared via garbage collection in most languages. In other languages like C, you would have to manually free the memory.
 
 ## Time Complexity
