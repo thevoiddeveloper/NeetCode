@@ -104,3 +104,28 @@ tail = ListNode4;
 
 <img width="1082" height="217" alt="Screenshot 2025-07-20 at 7 28 09 PM" src="https://github.com/user-attachments/assets/cb65514f-70f7-4654-9e1a-8e53d79fa72e" />
 
+5.4.2 Deleting from a Singly Linked List
+
+Deleting a node from a singly linked list will take O(1) since we can accomplish this by updating a single pointer.
+
+>This assumes we already have a reference to the node at the desired position we want to delete. If we have to traverse the list to arrive at the deletion point, the operation would take O(n) time.
+
+Suppose we want to delete ListNode2. Currently, our head points to ListNode1, and head.next points to ListNode2. We can update our head.next pointer to ListNode3, which can be accessed by chaining next pointers like head.next.next. This makes sense since head.next is ListNode2, and logically, head.next.next would be ListNode3.
+
+<img width="1075" height="297" alt="Screenshot 2025-07-20 at 7 30 19 PM" src="https://github.com/user-attachments/assets/1b6c5dc6-56ad-4fc6-bbbc-ffa6524f2904" />
+
+```java
+head.next = head.next.next;
+```
+<img width="1076" height="256" alt="Screenshot 2025-07-20 at 7 30 52 PM" src="https://github.com/user-attachments/assets/aaf18d82-e865-4886-8a70-caa7480acb43" />
+
+Updated linked list after deletion of ListNode2. Notice that now ListNode1’s next pointer points to ListNode3, instead of ListNode2
+
+<img width="1078" height="282" alt="Screenshot 2025-07-20 at 7 31 21 PM" src="https://github.com/user-attachments/assets/a47b5287-f608-4d89-84a5-6e56109166d1" />
+
+>It can be assumed that the memory occupied by ListNode2 will be cleared via garbage collection in most languages. In other languages like C, you would have to manually free the memory.
+
+## Time Complexity
+
+<img width="1100" height="244" alt="Screenshot 2025-07-20 at 7 31 35 PM" src="https://github.com/user-attachments/assets/4d6e2231-406f-41a8-aaf9-1cf05a80b2a9" />
+
