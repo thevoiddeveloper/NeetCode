@@ -39,3 +39,18 @@ ListNode2.next = null;
 tail = ListNode2;
 ```
 
+<img width="881" height="881" alt="Screenshot 2025-08-16 at 1 11 38 PM" src="https://github.com/user-attachments/assets/4674f2c7-3a24-40fa-ab2f-60334180fbea" />
+
+> Since we can insert and remove from the end in O(1) time, in theory, we could implement a stack with a linked list instead of an array. This is less common, but it is a possibility.
+
+**6.1.4 Deletion Front**
+<img width="983" height="360" alt="Screenshot 2025-08-16 at 1 12 51 PM" src="https://github.com/user-attachments/assets/a6593f55-e4dc-4b11-b179-b350092d6a69" />
+
+**6.2 Access**
+
+Similar to singly linked lists, we cannot randomly access a node. So in the worst case, we will have to traverse n nodes before reaching the desired node. This would run in O(n) time.
+
+Doubly linked lists have the benefit that we can traverse the list in both directions, as opposed to singly linked lists.
+
+**6.3 Time Complexity**
+<img width="1096" height="237" alt="Screenshot 2025-08-16 at 1 14 13 PM" src="https://github.com/user-attachments/assets/f6f6d6c4-7eb8-449e-8bd9-d2b9d1512a0e" />
