@@ -54,3 +54,117 @@ Doubly linked lists have the benefit that we can traverse the list in both direc
 
 **6.3 Time Complexity**
 <img width="1096" height="237" alt="Screenshot 2025-08-16 at 1 14 13 PM" src="https://github.com/user-attachments/assets/f6f6d6c4-7eb8-449e-8bd9-d2b9d1512a0e" />
+
+
+## 707. Design Linked List
+Design your implementation of the linked list. You can choose to use a singly or doubly linked list.
+A node in a singly linked list should have two attributes: val and next. val is the value of the current node, and next is a pointer/reference to the next node.
+If you want to use the doubly linked list, you will need one more attribute prev to indicate the previous node in the linked list. Assume all nodes in the linked list are 0-indexed.
+
+Implement the MyLinkedList class:
+
+- MyLinkedList() Initializes the MyLinkedList object.
+- int get(int index) Get the value of the indexth node in the linked list. If the index is invalid, return -1.
+- void addAtHead(int val) Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
+- void addAtTail(int val) Append a node of value val as the last element of the linked list.
+- void addAtIndex(int index, int val) Add a node of value val before the indexth node in the linked list. If index equals the length of the linked list, the node will be appended to the end of the linked list. If index is greater than the length, the node will not be inserted.
+- void deleteAtIndex(int index) Delete the indexth node in the linked list, if the index is valid.
+
+```java
+class ListNode {
+    int val;
+    ListNode prev;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.prev = null;
+        this.next = null;
+    }
+}
+
+public class MyLinkedList {
+    ListNode head;
+    ListNode tail;
+
+    MyLinkedList() {
+        head = new ListNode(0);
+        tail = new ListNode(0);
+        head.next = tail;
+        tail.prev = head;
+    }
+
+    int get(int index) {
+        ListNode cur = head.next;
+        while (cur != null && index > 0) {
+            cur = cur.next;
+            index--;
+        }
+        if (cur != null && cur != tail && index == 0) {
+            return cur.val;
+        }
+        return -1;
+    }
+
+    void addAtHead(int val) {
+        ListNode node = new ListNode(val);
+        ListNode next = head.next;
+        ListNode prev = head;
+        prev.next = node;
+        next.prev = node;
+        node.next = next;
+        node.prev = prev;
+    }
+
+    void addAtTail(int val) {
+        ListNode node = new ListNode(val);
+        ListNode next = tail;
+        ListNode prev = tail.prev;
+        prev.next = node;
+        next.prev = node;
+        node.next = next;
+        node.prev = prev;
+    }
+
+    void addAtIndex(int index, int val) {
+        ListNode cur = head.next;
+        while (cur != null && index > 0) {
+            cur = cur.next;
+            index--;
+        }
+        if (cur != null && index == 0) {
+            ListNode node = new ListNode(val);
+            ListNode next = cur;
+            ListNode prev = cur.prev;
+            prev.next = node;
+            next.prev = node;
+            node.next = next;
+            node.prev = prev;
+        }
+    }
+
+    void deleteAtIndex(int index) {
+        ListNode cur = head.next;
+        while (cur != null && index > 0) {
+            cur = cur.next;
+            index--;
+        }
+        if (cur != null && cur != tail && index == 0) {
+            ListNode next = cur.next;
+            ListNode prev = cur.prev;
+            next.prev = prev;
+            prev.next = next;
+        }
+    }
+}
+
+/**
+ * Your MyLinkedList object will be instantiated and called as such:
+ * MyLinkedList obj = new MyLinkedList();
+ * int param_1 = obj.get(index);
+ * obj.addAtHead(val);
+ * obj.addAtTail(val);
+ * obj.addAtIndex(index,val);
+ * obj.deleteAtIndex(index);
+ */
+```
