@@ -1,5 +1,6 @@
 # 7 - Queues
 
+# stack using queue
 ```java []
 class MyStack {
     
