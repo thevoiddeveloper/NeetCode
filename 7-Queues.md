@@ -58,7 +58,7 @@ There is also a variation of the queue, a double-ended queue, known as a deque (
 
 One of the most important use cases for the queue is when performing breadth-first search for trees and graphs, which we will cover later in the course.
 
-**Implement Queue**
+## Implement Queue
 
 ```java
 // public class ListNode {
@@ -118,7 +118,7 @@ public class Queue {
 }
 ```
 
-**1700. Number of Students Unable to Eat Lunch**
+## 1700. Number of Students Unable to Eat Lunch
 
 ```java
 class Solution {
@@ -148,7 +148,7 @@ class Solution {
 }
 ```
 
-**225. Implement Stack using Queues**
+## 225. Implement Stack using Queues
 
 ```java
 class MyStack {
