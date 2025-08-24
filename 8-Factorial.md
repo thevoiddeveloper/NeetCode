@@ -81,3 +81,34 @@ In the iterative case, we store our answer in a variable named res and decrement
 The iterative implementation is much simpler than the recursive one in this case, but that's not always the case. Recursion will be especially useful when we start learning about trees.
 
 This solution is also more space efficient since it doesn't require the function call stack.
+
+**206. Reverse Linked List**
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode newHead = head;
+        if (head.next != null) {
+            newHead = reverseList(head.next);
+            head.next.next = head;
+        }
+        head.next = null;
+
+        return newHead;
+    }
+}
+```
