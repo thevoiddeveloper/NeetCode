@@ -51,3 +51,39 @@ This means that the total number of nodes in the tree is O(2^n). Each node itsel
 
 <img width="1080" height="487" alt="Screenshot 2025-08-28 at 4 01 48 PM" src="https://github.com/user-attachments/assets/6f4c8942-be21-44d4-9228-189825dcc4d6" />
 
+**70. Climbing Stairs**
+
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+>Recursion
+```java
+public class Solution {
+    public int climbStairs(int n) {
+        return dfs(n, 0);
+    }
+
+    public int dfs(int n, int i) {
+        if (i >= n) return i == n ? 1 : 0;
+        return dfs(n, i + 1) + dfs(n, i + 2);
+    }
+}
+```
+
+>Dynamic Programming
+```java
+public class Solution {
+    public int climbStairs(int n) {
+        int one = 1, two = 1;
+
+        for (int i = 0; i < n - 1; i++) {
+            int temp = one;
+            one = one + two;
+            two = temp;
+        }
+
+        return one;
+    }
+}
+```
